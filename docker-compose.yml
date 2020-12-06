@@ -23,7 +23,7 @@ services:
       - 9000:9000
     volumes:
       - hadoop_namenode:/hadoop/dfs/name
-      - /home/phillip_huy_le/Assignments/cca4/nbs:/home/nbs
+      - ./nbs:/home/nbs
     environment:
       - CLUSTER_NAME=test
     env_file:
@@ -173,8 +173,8 @@ services:
     ports:
         - "8888:8888"
     volumes:
-        - /home/phillip_huy_le/Assignments/cca4/nbs:/home/jovyan/work/nbs
-        - /home/phillip_huy_le/Assignments/cca4/events:/tmp/spark-events
+        - ./nbs:/home/jovyan/work/nbs
+        - ./events:/tmp/spark-events
     command: "start-notebook.sh \
         --ip=0.0.0.0 \
         --allow-root \
